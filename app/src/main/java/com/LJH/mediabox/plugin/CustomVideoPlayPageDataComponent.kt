@@ -1,0 +1,61 @@
+package com.LJH.mediabox.plugin
+
+import android.util.Log
+import com.su.mediabox.pluginapi.components.IVideoPlayPageDataComponent
+import com.su.mediabox.pluginapi.data.VideoPlayMedia
+import com.LJH.mediabox.plugin.Const.host
+import com.LJH.util.JsoupUtil
+import org.jsoup.nodes.Element
+
+class CustomVideoPlayPageDataComponent : IVideoPlayPageDataComponent {
+
+    private suspend fun getVideoRawUrl(e: Element): String {
+        val div = e.select("[class=area]").select("[class=bofang]")[0].children()
+        val rawUrl = div.attr("data-vid")
+        return when {
+            rawUrl.endsWith("\$mp4", true) -> rawUrl.replace("\$mp4", "").replace("\\", "/")
+            rawUrl.endsWith("\$url", true) -> rawUrl.replace("\$url", "")
+            rawUrl.endsWith("\$hp", true) -> {
+                JsoupUtil.getDocument("http://tup.yhdm.so/hp.php?url=${rawUrl.substringBefore("\$hp")}")
+                    .body().select("script")[0].toString()
+                    .substringAfter("video: {")
+                    .substringBefore("}")
+                    .split(",")[0]
+                    .substringAfter("url: \"")
+                    .substringBefore("\"")
+            }
+            rawUrl.endsWith("\$qzz", true) -> rawUrl
+            else -> ""
+        }
+    }
+
+    override suspend fun getVideoPlayMedia(episodeUrl: String): VideoPlayMedia {
+        var name = ""
+        var videoUrl = ""
+        val url = host + episodeUrl
+        val document = JsoupUtil.getDocument(url)
+        document.allElements.forEach {
+            when (it.className()) {
+                //播放链接
+                "play" -> {
+                    videoUrl = getVideoRawUrl(it)
+                }
+                "area" -> {
+                    val areaChildren = it.children()
+                    for (j in areaChildren.indices) {
+                        when (areaChildren[j].className()) {
+                            "gohome l" -> {
+                                //剧集名
+                                name = areaChildren[j].select("h1")
+                                    .select("span").text().replace("：", "")
+                                Log.d("番剧标题", name)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return VideoPlayMedia(name, videoUrl)
+    }
+
+}
