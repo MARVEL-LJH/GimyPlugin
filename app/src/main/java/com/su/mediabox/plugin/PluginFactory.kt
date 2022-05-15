@@ -4,7 +4,7 @@ import com.LJH.mediabox.plugin.Const
 import com.su.mediabox.pluginapi.components.*
 import com.su.mediabox.pluginapi.IPluginFactory
 import com.LJH.mediabox.plugin.*
-import com.su.sakuraanime2plugin.plugin.components.VideoPlayPageDataComponent
+import com.LJH.mediabox.plugin.VideoPlayPageDataComponent
 
 /**
  * 每个插件必须实现本类
