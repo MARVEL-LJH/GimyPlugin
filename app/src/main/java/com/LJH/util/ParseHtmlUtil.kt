@@ -11,43 +11,6 @@ import java.net.URL
 
 object ParseHtmlUtil {
 
-    fun parseTopli(
-        element: Element
-    ): List<SimpleTextData> {
-        val animeShowList = mutableListOf<SimpleTextData>()
-        val elements: Elements = element.select("ul").select("li")
-        for (i in elements.indices) {
-            var url: String
-            var title: String
-            if (elements[i].select("a").size >= 2) {    //最近更新，显示地区的情况
-                url = elements[i].select("a")[1].attr("href")
-                title = elements[i].select("a")[1].text()
-                if (elements[i].select("span")[0].children().size == 0) {     //最近更新，不显示地区的情况
-                    url = elements[i].select("a")[0].attr("href")
-                    title = elements[i].select("a")[0].text()
-                }
-            } else {                                            //总排行榜
-                url = elements[i].select("a")[0].attr("href")
-                title = elements[i].select("a")[0].text()
-            }
-
-            val areaUrl = elements[i].select("span").select("a")
-                .attr("href")
-            val areaTitle = elements[i].select("span").select("a").text()
-            var episodeUrl = elements[i].select("b").select("a")
-                .attr("href")
-            val episodeTitle = elements[i].select("b").select("a").text()
-            val date = elements[i].select("em").text()
-            if (episodeUrl == "") {
-                episodeUrl = url
-            }
-            animeShowList.add(SimpleTextData(title).apply {
-                action = DetailAction.obtain(url)
-            })
-        }
-        return animeShowList
-    }
-
     fun getCoverUrl(cover: String, imageReferer: String): String {
         return when {
             cover.startsWith("//") -> {
@@ -133,27 +96,4 @@ object ParseHtmlUtil {
         return videoInfoItemDataList
     }
 
-    /**
-     * 解析分类元素
-     */
-    fun parseClassifyEm(element: Element): List<ClassifyItemData> {
-        val classifyItemDataList = mutableListOf<ClassifyItemData>()
-        var classifyCategory = ""
-        for (em in element.select("p"))
-            for (target in em.children())
-                when (target.tagName()) {
-                    //分类类别
-                    "label" -> classifyCategory =
-                        target.text().replace(":", "").replace("：", "").trim()
-                    //分类项
-                    "a" -> classifyItemDataList.add(ClassifyItemData().apply {
-                        action = ClassifyAction.obtain(
-                            target.attr("href"),
-                            classifyCategory,
-                            target.text()
-                        )
-                    })
-                }
-        return classifyItemDataList
-    }
 }

@@ -2,15 +2,13 @@ package com.LJH.mediabox.plugin
 
 import android.graphics.Typeface
 import android.util.Log
-import android.view.Gravity
-import com.su.mediabox.pluginapi.action.CustomPageAction
 import com.su.mediabox.pluginapi.action.DetailAction
 import com.su.mediabox.pluginapi.components.IHomePageDataComponent
 import com.su.mediabox.pluginapi.data.*
 import com.su.mediabox.pluginapi.util.UIUtil.dp
 import com.LJH.mediabox.plugin.Const.host
 import com.LJH.util.JsoupUtil
-import java.lang.StringBuilder
+
 
 class CustomHomePageDataComponent : IHomePageDataComponent {
 

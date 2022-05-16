@@ -7,7 +7,7 @@ Gimy.app[**媒体盒子**](https://github.com/RyensX/MediaBox)插件 by RyensX
 自动安装
 
 1. 下载安装[媒体盒子](https://github.com/RyensX/MediaBox/releases)
-2. 启动媒体盒子打开插件仓库点击自动下载安装**樱花动漫2**
+2. 启动媒体盒子打开插件仓库点击自动下载安装**Gimy影迷**
 3. 启动插件
 
 手动安装

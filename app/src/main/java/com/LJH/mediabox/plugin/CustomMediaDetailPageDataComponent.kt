@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.Gravity
 import com.su.mediabox.pluginapi.components.IMediaDetailPageDataComponent
 import com.su.mediabox.pluginapi.action.ClassifyAction
-import com.su.mediabox.pluginapi.action.DetailAction
 import com.su.mediabox.pluginapi.action.PlayAction
 import com.su.mediabox.pluginapi.data.*
 import com.su.mediabox.pluginapi.util.TextUtil.urlEncode
@@ -151,23 +150,6 @@ class CustomMediaDetailPageDataComponent : IMediaDetailPageDataComponent {
         return episodeList
     }
 
-    private fun parseSeries(element: Element): List<MediaInfo1Data> {
-        val videos = mutableListOf<MediaInfo1Data>()
-        val elements: Elements = element.select("ul").select("li")
-        for (i in elements.indices) {
-            val url = elements[i].select("a").attr("href")
-            val cover = elements[i].select("a").select("img").attr("src")
-            val title = elements[i].select("[class=tname]").select("a").text()
-            var episode = ""
-            if (elements[i].select("p").size > 1) {
-                episode = elements[i].select("p")[1].select("a").text()
-            }
-            videos.add(MediaInfo1Data(title, cover, Const.host + url, episode).apply {
-                action = DetailAction.obtain(url)
-            })
-        }
-        return videos
-    }
 
     private fun String.addDouBanSearch(name: String) =
         this + "\n🎞 豆瓣评分 https://m.douban.com/search/?query=${name.urlEncode()}"
