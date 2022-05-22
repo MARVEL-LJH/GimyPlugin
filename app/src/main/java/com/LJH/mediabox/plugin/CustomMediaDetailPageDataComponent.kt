@@ -14,7 +14,8 @@ import org.jsoup.nodes.Element
 import org.jsoup.select.Elements
 
 class CustomMediaDetailPageDataComponent : IMediaDetailPageDataComponent {
-    override suspend fun getAnimeDetailData(
+
+    override suspend fun getMediaDetailData(
         partUrl: String
     ): Triple<String, String, List<BaseData>> {
         var cover = ""
@@ -135,6 +136,8 @@ class CustomMediaDetailPageDataComponent : IMediaDetailPageDataComponent {
             addAll(details)
         })
     }
+
+
 
     private fun parseEpisodes(element: Element): List<EpisodeData> {
         val episodeList = mutableListOf<EpisodeData>()
