@@ -18,8 +18,8 @@ class PluginFactory : IPluginFactory() {
     override fun <T : IBasePageDataComponent> createComponent(clazz: Class<T>) = when (clazz) {
         IHomePageDataComponent::class.java -> CustomHomePageDataComponent()
         IMediaDetailPageDataComponent::class.java -> CustomMediaDetailPageDataComponent()
-        IVideoPlayPageDataComponent::class.java -> VideoPlayPageDataComponent()
         IMediaSearchPageDataComponent::class.java -> CustomMediaSearchPageDataComponent()
+        IVideoPlayPageDataComponent::class.java -> VideoPlayPageDataComponent()
         else -> null
     } as? T
 
