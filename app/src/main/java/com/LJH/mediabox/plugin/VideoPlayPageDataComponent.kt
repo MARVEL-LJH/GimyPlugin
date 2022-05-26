@@ -7,6 +7,7 @@ import com.su.mediabox.pluginapi.util.WebUtilIns
 import com.LJH.mediabox.plugin.Const.host
 import com.LJH.mediabox.plugin.Const.ua
 import com.LJH.util.JsoupUtil
+import com.su.mediabox.pluginapi.util.TextUtil.urlDecode
 import kotlinx.coroutines.*
 import org.jsoup.Jsoup
 
@@ -18,13 +19,20 @@ class VideoPlayPageDataComponent : IVideoPlayPageDataComponent {
 
         //解析链接
         val videoUrl = withContext(Dispatchers.Main) {
+            val iframeUrl = withTimeoutOrNull(10 * 1000) {
+                WebUtilIns.interceptResource(
+                    url, "(.*)\\.m3u8(.*)",
+                    userAgentString = ua
+                )
+            } ?: ""
             async {
-                withTimeoutOrNull(10 * 1000) {
-                    WebUtilIns.interceptResource(
-                        url, "(.*)\\.m3u8(.*)",
-                        userAgentString = ua
-                    )
-                } ?: ""
+                when {
+                    iframeUrl.contains("jcplayer") -> iframeUrl.substringAfter("url=")
+                        .substringBefore("&").urlDecode()
+                    else -> {}
+                }
+
+
             }
         }
 
@@ -38,7 +46,7 @@ class VideoPlayPageDataComponent : IVideoPlayPageDataComponent {
             }
         }
 
-        return VideoPlayMedia(name.await(), videoUrl.await())
+        return VideoPlayMedia(name.await(), videoUrl.await() as String)
     }
 
 }
