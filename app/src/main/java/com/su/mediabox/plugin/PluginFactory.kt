@@ -20,6 +20,7 @@ class PluginFactory : IPluginFactory() {
         IMediaDetailPageDataComponent::class.java -> CustomMediaDetailPageDataComponent()
         IMediaSearchPageDataComponent::class.java -> CustomMediaSearchPageDataComponent()
         IVideoPlayPageDataComponent::class.java -> VideoPlayPageDataComponent()
+        IMediaClassifyPageDataComponent::class.java -> MediaClassifyPageDataComponent()
         else -> null
     } as? T
 

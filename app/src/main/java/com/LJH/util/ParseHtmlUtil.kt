@@ -1,5 +1,6 @@
 package com.su.sakuraanimeplugin.plugin.util
 
+import android.graphics.Typeface
 import android.util.Log
 import com.LJH.mediabox.plugin.Const.host
 import org.jsoup.nodes.Element
@@ -30,7 +31,7 @@ object ParseHtmlUtil {
     }
 
     /**
-     * 解析搜索/分类下的元素
+     * 解析搜索功能
      *
      * @param element ul的父元素
      */
@@ -96,4 +97,65 @@ object ParseHtmlUtil {
         return videoInfoItemDataList
     }
 
+
+    /**
+     * 解析分类元素
+     */
+    fun parseClassifyEm(element: Element): List<ClassifyItemData> {
+        val classifyItemDataList = mutableListOf<ClassifyItemData>()
+        var classifyCategory = ""
+        for (target in element.children())
+            when (target.className()) {
+                //分类类别
+                "text" -> {classifyCategory = target.text()
+                    Log.d("分类类别",classifyCategory)
+                }
+                //分类项
+                "" -> {
+                    //分类频道
+                    target.select("a").forEach {
+                        classifyItemDataList.add(ClassifyItemData().apply {
+                            action = ClassifyAction.obtain(
+                                it.attr("href").apply {
+                                    Log.d("分类链接", this)
+                                },
+                                classifyCategory,
+                                it.text()
+                            )
+                        })
+                    }
+                }
+            }
+        return classifyItemDataList
+    }
+
+    /**
+     * 分类下的元素搜索
+     *
+     * @param element ul的父元素
+     */
+    fun parseClassifySearchEm(
+        element: Element,
+        imageReferer: String
+    ): List<BaseData>{
+        val Classifiedvideodatalist = mutableListOf<BaseData>()
+        for (video in element.children()) {
+            video.select("a")?.first()?.apply {
+                val name = attr("title")
+                val videoUrl = attr("href")
+                val coverUrl = attr("data-original")
+                val episode = video.select("[class=note text-bg-r]").first()?.text()
+
+                if (!name.isNullOrBlank() && !videoUrl.isNullOrBlank() && !coverUrl.isNullOrBlank()) {
+                    Classifiedvideodatalist.add(
+                        MediaInfo1Data(name, coverUrl, videoUrl, episode ?: "")
+                            .apply {
+                                action = DetailAction.obtain(videoUrl)
+                            })
+                    Log.d("添加视频", "($name) ($videoUrl) ($coverUrl) ($episode)")
+                }
+            }
+        }
+        return Classifiedvideodatalist
+    }
 }
