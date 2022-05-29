@@ -40,9 +40,7 @@ class VideoPlayPageDataComponent : IVideoPlayPageDataComponent {
         //剧集名
         val name = withContext(Dispatchers.Default) {
             async {
-                document.select("[class=nav nav-tabs]").select("span").first()?.let {
-                    it.text().replace(": ", "")
-                } ?: ""
+                document.getElementsByClass("mac_history_set2").attr("data-playname")
             }
         }
 
