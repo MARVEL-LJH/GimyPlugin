@@ -46,7 +46,7 @@ class MediaClassifyPageDataComponent : IMediaClassifyPageDataComponent {
         var url = classifyAction.url + ""
         if (!url.startsWith(Const.host))
             url = Const.host + url
-        url.replace("-----------.html","--------${page}---.html")
+        url = url.replace("-----------","--------$page---")
         Log.d("获取分类数据", url)
         Log.d("获取分类数据2", Const.host)
         Log.d("获取分类数据3", classifyAction.toString())
