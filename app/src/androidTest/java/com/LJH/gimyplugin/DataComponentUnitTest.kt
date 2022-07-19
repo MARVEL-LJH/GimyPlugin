@@ -55,13 +55,13 @@ class testGetAnimeShowData {
 //}
 
 
-    @Test
-    fun testVideoPlayPageDataComponent() = runBlocking {
-        val factory = PluginFactory()
-        val detailDataComponent =
-            factory.createComponent(IVideoPlayPageDataComponent::class.java)?.apply {
-
-            }
-        assertNotNull(detailDataComponent)
-    }
+//    @Test
+//    fun testVideoPlayPageDataComponent() = runBlocking {
+//        val factory = PluginFactory()
+//        val detailDataComponent =
+//            factory.createComponent(IVideoPlayPageDataComponent::class.java)?.apply {
+//
+//            }
+//        assertNotNull(detailDataComponent)
+//    }
 }

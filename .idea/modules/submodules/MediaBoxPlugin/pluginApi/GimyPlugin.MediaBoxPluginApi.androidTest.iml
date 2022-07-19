@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":MediaBoxPluginApi:androidTest" external.linked.project.path="$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi" external.root.project.path="$MODULE_DIR$/../../../../.." external.system.id="GRADLE" external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="kotlin-language" name="Kotlin">
+      <configuration version="4" platform="JVM 1.8" allPlatforms="JVM [1.8]" useProjectSettings="false">
+        <compilerSettings>
+          <option name="additionalArguments" value="-Xallow-no-source-files" />
+        </compilerSettings>
+        <compilerArguments>
+          <option name="destination" value="$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/tmp/kotlin-classes/debugAndroidTest" />
+          <option name="classpath" value="$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/intermediates/compile_library_classes_jar/debug/classes.jar;C:/Users/39754/.gradle/caches/transforms-3/698f564137aafb9915fdee79d1a6f3ee/transformed/jetified-kotlin-stdlib-jdk8-1.6.10.jar;C:/Users/39754/.gradle/caches/transforms-3/b3dcceedd53c7c47a33eb424c9624099/transformed/jetified-kotlin-stdlib-jdk7-1.6.10.jar;C:/Users/39754/.gradle/caches/transforms-3/437340909015a986b4a66cdf2e22997a/transformed/jetified-kotlin-stdlib-1.6.10.jar;C:/Users/39754/.gradle/caches/transforms-3/d6a443b8b062b020f58a4f83d8278065/transformed/jetified-annotations-13.0.jar;C:/Users/39754/.gradle/caches/transforms-3/b8a84cf40f2b58ba84c4578eb64ba83a/transformed/jetified-kotlin-stdlib-common-1.6.10.jar;C:/Users/39754/AppData/Local/Android/Sdk/platforms/android-31/android.jar;C:/Users/39754/AppData/Local/Android/Sdk/build-tools/30.0.3/core-lambda-stubs.jar" />
+          <option name="noStdlib" value="true" />
+          <option name="moduleName" value="MediaBoxPluginApi_debug" />
+          <option name="friendPaths">
+            <array>
+              <option value="$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/tmp/kotlin-classes/debug" />
+              <option value="$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/intermediates/javac/debug/classes" />
+              <option value="$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/intermediates/compile_library_classes_jar/debug/classes.jar" />
+            </array>
+          </option>
+          <option name="languageVersion" value="1.6" />
+          <option name="apiVersion" value="1.6" />
+          <option name="pluginOptions">
+            <array />
+          </option>
+          <option name="pluginClasspaths">
+            <array />
+          </option>
+          <option name="errors">
+            <ArgumentParseErrors />
+          </option>
+        </compilerArguments>
+      </configuration>
+    </facet>
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
+        <afterSyncTasks>
+          <task>generateDebugSources</task>
+        </afterSyncTasks>
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/src/main/res;file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/src/debug/res;file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/res/rs/debug;file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/res/resValues/debug" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/src/androidTest/res;file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/src/androidTestDebug/res;file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/res/resValues/androidTest/debug" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+        <option name="PROJECT_TYPE" value="1" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/aidl_source_output_dir/debugAndroidTest/out" />
+    <content url="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/ap_generated_sources/debugAndroidTest/out" />
+    <content url="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/renderscript_source_output_dir/debugAndroidTest/out" />
+    <content url="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/res/resValues/androidTest/debug" />
+    <content url="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/res/rs/androidTest/debug" />
+    <content url="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/build/generated/source/buildConfig/androidTest/debug" />
+    <content url="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/src/androidTest">
+      <sourceFolder url="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/src/androidTest/java" isTestSource="true" />
+    </content>
+    <content url="file://$MODULE_DIR$/../../../../../submodules/MediaBoxPlugin/pluginApi/src/androidTestDebug" />
+    <orderEntry type="jdk" jdkName="Android API 31 Platform" jdkType="Android SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="GimyPlugin.MediaBoxPluginApi.main" scope="TEST" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.6.10" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains:annotations:13.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.6.10" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="GimyPlugin.MediaBoxPluginApi.main" />
+</module>

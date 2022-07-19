@@ -4,7 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/GimyPlugin.iml" filepath="$PROJECT_DIR$/.idea/modules/GimyPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/MediaBoxPlugin/pluginApi/GimyPlugin.MediaBoxPluginApi.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/MediaBoxPlugin/pluginApi/GimyPlugin.MediaBoxPluginApi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/MediaBoxPlugin/pluginApi/GimyPlugin.MediaBoxPluginApi.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/MediaBoxPlugin/pluginApi/GimyPlugin.MediaBoxPluginApi.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/MediaBoxPlugin/pluginApi/GimyPlugin.MediaBoxPluginApi.main.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/MediaBoxPlugin/pluginApi/GimyPlugin.MediaBoxPluginApi.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/submodules/MediaBoxPlugin/pluginApi/GimyPlugin.MediaBoxPluginApi.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/submodules/MediaBoxPlugin/pluginApi/GimyPlugin.MediaBoxPluginApi.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GimyPlugin.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GimyPlugin.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GimyPlugin.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GimyPlugin.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GimyPlugin.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GimyPlugin.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/GimyPlugin.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/GimyPlugin.app.unitTest.iml" />
     </modules>
   </component>
 </project>

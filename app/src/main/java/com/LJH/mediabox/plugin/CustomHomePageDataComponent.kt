@@ -7,7 +7,9 @@ import com.su.mediabox.pluginapi.components.IHomePageDataComponent
 import com.su.mediabox.pluginapi.data.*
 import com.su.mediabox.pluginapi.util.UIUtil.dp
 import com.LJH.mediabox.plugin.Const.host
-import com.LJH.util.JsoupUtil
+import com.su.mediabox.pluginapi.Constant
+import com.su.mediabox.pluginapi.util.WebUtilIns
+import org.jsoup.Jsoup
 
 
 class CustomHomePageDataComponent : IHomePageDataComponent {
@@ -15,10 +17,13 @@ class CustomHomePageDataComponent : IHomePageDataComponent {
     override suspend fun getData(page: Int): List<BaseData>? {
         if (page != 1)
             return null
-        val url = host
-        val doc = JsoupUtil.getDocument(url)
+        val doc = Jsoup.parse(
+            WebUtilIns.getRenderedHtmlCode(
+                host ,
+                userAgentString = Constant.Request.USER_AGENT_ARRAY[12]
+            )
+        )
         val data = mutableListOf<BaseData>()
-
 
         //3.横幅
         doc.getElementsByClass("hidden-xs")[1]?.apply {
